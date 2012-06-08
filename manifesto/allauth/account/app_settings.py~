@@ -10,9 +10,6 @@ EMAIL_VERIFICATION = getattr(settings, "ACCOUNT_EMAIL_VERIFICATION", True)
 # Login by email address, not username
 EMAIL_AUTHENTICATION = getattr(settings, "ACCOUNT_EMAIL_AUTHENTICATION", True)
 
-
-EMAIL_CONFIRMATION_DAYS = getattr(settings, "EMAIL_CONFIRMATION_DAYS", 7)
-
 # Enforce uniqueness of e-mail addresses
 UNIQUE_EMAIL = getattr(settings, "ACCOUNT_UNIQUE_EMAIL", True)
 
