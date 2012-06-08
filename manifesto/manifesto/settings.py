@@ -37,8 +37,8 @@ SITE_ID = 1
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'tierra.adentro.digital@gmail.com'
-EMAIL_HOST_PASSWORD = 'pastel123'
+EMAIL_HOST_USER = 'digital.solidarity@gmail.com'
+EMAIL_HOST_PASSWORD = 's0l1d4r1t4'
 EMAIL_PORT = 587
 EMAIL_CONFIRMATION_DAYS = 7
 
@@ -144,6 +144,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'holamundo',
     'landing_page',
+    'signers',
     # Para allauth:
     'emailconfirmation',
     'allauth',

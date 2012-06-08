@@ -23,7 +23,7 @@ EMAIL_SUBJECT_PREFIX = getattr(settings, "ACCOUNT_EMAIL_SUBJECT_PREFIX", None)
 SIGNUP_FORM_CLASS = getattr(settings, "ACCOUNT_SIGNUP_FORM_CLASS", None)
 
 # The user is required to enter a username when signing up
-USERNAME_REQUIRED = getattr(settings, "ACCOUNT_USERNAME_REQUIRED", True)
+USERNAME_REQUIRED = getattr(settings, "ACCOUNT_USERNAME_REQUIRED", False)
 
 # render_value parameter as passed to PasswordInput fields
 PASSWORD_INPUT_RENDER_VALUE = getattr(settings, "ACCOUNT_PASSWORD_INPUT_RENDER_VALUE", False)
