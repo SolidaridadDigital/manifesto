@@ -1,8 +1,4 @@
 # Django settings for manifesto project.
-from django.utils.translation import ugettext as _
-import os
-
-PROJECT_ROOT = os.path.dirname(os.path.dirname(__file__))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -16,7 +12,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': os.path.join(PROJECT_ROOT, 'database.db'),                      # Or path to database file if using sqlite3.
+        'NAME': 'database.db',                      # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -35,9 +31,18 @@ TIME_ZONE = 'America/Santiago'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'es-cl'
 
 SITE_ID = 1
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = '' #agregar aqui el mail
+EMAIL_HOST_PASSWORD = '' #agregar aqui el pass del mail
+EMAIL_PORT = 587
+EMAIL_CONFIRMATION_DAYS = 7
+
+AUTH_PROFILE_MODULE = 'signers.SignerProfile'
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
@@ -72,7 +77,7 @@ STATIC_URL = '/static/'
 # Additional locations of static files
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
 STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'static'),
+    'static',
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
 )
@@ -101,7 +106,6 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.locale.LocaleMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
@@ -112,10 +116,21 @@ ROOT_URLCONF = 'manifesto.urls'
 WSGI_APPLICATION = 'manifesto.wsgi.application'
 
 TEMPLATE_DIRS = (
-    os.path.join(PROJECT_ROOT, 'templates'),
+    "templates"
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "allauth.context_processors.allauth",
+    "allauth.account.context_processors.account",
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.request'
+)
+
+AUTHENTICATION_BACKENDS = (
+    "allauth.account.auth_backends.AuthenticationBackend",
 )
 
 INSTALLED_APPS = (
@@ -128,9 +143,14 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
-    'django.contrib.admindocs',
+    # 'django.contrib.admindocs',
     'holamundo',
-    'landing_page',	
+    'landing_page',
+    'signers',
+    # Para allauth:
+    'emailconfirmation',
+    'allauth',
+    'allauth.account',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -161,17 +181,3 @@ LOGGING = {
         },
     }
 }
-
-TEMPLATE_CONTEXT_PROCESSORS = (
-    "django.contrib.auth.context_processors.auth",
-    "django.core.context_processors.debug",
-    "django.core.context_processors.i18n",
-    "django.core.context_processors.media",
-    "django.core.context_processors.static",
-    "django.core.context_processors.tz",
-    "django.contrib.messages.context_processors.messages")
-
-LANGUAGES = (
-  ('es', _('Spanish')),
-  ('en', _('English')),
-)
