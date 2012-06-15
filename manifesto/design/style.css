@@ -1,0 +1,97 @@
+/* =========== */
+/* = General = */
+/* =========== */
+.clear {
+	clear:both;
+}
+p {
+	margin:0;
+}
+/* ========== */
+/* = Header = */
+/* ========== */
+header {
+	left: 0;
+	list-style: none;
+	overflow: hidden;
+	position: fixed;
+	right: 0;
+	text-align: center;
+	top: 0;
+	height: 70px;
+	z-index:99999;
+	box-shadow: 2px 2px 5px #707070;
+	clear: both;
+	background:white;
+	padding-top:10px;
+}
+
+header nav li{
+	display:table;
+	float:left;
+	margin-left:10px;
+	margin-right:10px;
+}
+
+#languaje_picker {
+	float:right;
+	margin-right:10px;
+}
+
+#logo {
+	width:200px;
+	text-align:center;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+nav {
+	width:300px;
+	margin-right:auto;
+	margin-left:auto;
+	display:inline-block;
+}
+
+nav ul {
+	display:inline-block;
+	padding:0;
+	margin-left:auto;
+	margin-right:auto;
+}
+#title {
+	margin-bottom:10px;
+}
+
+/* ===================== */
+/* = Section manifesto = */
+/* ===================== */
+.left {
+	width:30%;
+	display: inline-block;
+	vertical-align:top;
+}
+
+.right {
+	width:69%;
+	display: inline-block;
+	top: 110px;
+	vertical-align:top;
+}
+
+/* =========== */
+/* = Content = */
+/* =========== */
+section {
+	width:970px;
+	margin-right:auto;
+	margin-left:auto;
+	display: block;
+	clear: both;
+	margin-bottom:10px;
+	background:bottom center;
+}
+
+.divider {
+	height:10px;
+	background:black;
+}
