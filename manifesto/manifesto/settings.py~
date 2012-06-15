@@ -35,6 +35,13 @@ LANGUAGE_CODE = 'es-cl'
 
 SITE_ID = 1
 
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'digital.solidarity@gmail.com'
+EMAIL_HOST_PASSWORD = 's0l1d4r1t4'
+EMAIL_PORT = 587
+EMAIL_CONFIRMATION_DAYS = 7
+
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
 USE_I18N = True
@@ -68,7 +75,7 @@ STATIC_URL = '/static/'
 # Additional locations of static files
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
 STATICFILES_DIRS = (
-    "/home/ricardo/Desktop/manifesto/manifesto/static/"
+    "/home/ricardo/Desktop/manifesto/manifesto/static"
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
 )
@@ -113,6 +120,17 @@ TEMPLATE_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
 )
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "allauth.context_processors.allauth",
+    "allauth.account.context_processors.account",
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.request'
+)
+
+AUTHENTICATION_BACKENDS = (
+    "allauth.account.auth_backends.AuthenticationBackend",
+)
+
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -125,7 +143,11 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'holamundo',
-    'landing_page',	
+    'landing_page',
+    # Para allauth:
+    'emailconfirmation',
+    'allauth',
+    'allauth.account',
 )
 
 # A sample logging configuration. The only tangible logging
