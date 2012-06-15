@@ -132,6 +132,12 @@ class BaseSignupForm(_base_signup_form_class()):
         widget = forms.TextInput()
     )
     email = forms.EmailField(widget=forms.TextInput())
+    first_name = forms.CharField(
+        label = _("Nombre"),
+        max_length = 30)
+    last_name = forms.CharField(
+        label = _("Apellido"),
+        max_length = 30)
 
     def __init__(self, *args, **kwargs):
         super(BaseSignupForm, self).__init__(*args, **kwargs)
@@ -179,6 +185,8 @@ class BaseSignupForm(_base_signup_form_class()):
                 except User.DoesNotExist:
                     break
         user.email = self.cleaned_data["email"].strip().lower()
+        user.first_name = self.cleaned_data["first_name"]
+        user.last_name = self.cleaned_data["last_name"]
         user.set_unusable_password()
         if commit:
             user.save()
@@ -195,6 +203,20 @@ class SignupForm(BaseSignupForm):
 	label = _("Password (again)"),
 	widget = forms.PasswordInput(render_value=app_settings.PASSWORD_INPUT_RENDER_VALUE)
     )
+    comment = forms.CharField(
+        label = _("Comentario"),
+        widget = forms.Textarea,
+        required = False)
+
+    #ARREGLAR DESPUES CUANDO TENGAMOS LA LISTA DE PAISES#####
+    country = forms.CharField(
+        label = _("Pais"),
+        required=False)
+    #####################################
+
+    suscribed = forms.BooleanField(
+        label = _("Suscrito"),
+        required = False)
     confirmation_key = forms.CharField(
         max_length = 40,
         required = False,
@@ -204,12 +226,16 @@ class SignupForm(BaseSignupForm):
     def __init__(self, *args, **kwargs):
         super(SignupForm, self).__init__(*args, **kwargs)
         current_order =self.fields.keyOrder
-        preferred_order = self.fields.keyOrder = ["username", 
+        preferred_order = self.fields.keyOrder = ["first_name", 
+                                                  "last_name",
+                                                  "username", 
                                                   "password1", 
                                                   "password2",
                                                   "email"]
         if not app_settings.USERNAME_REQUIRED:
-            preferred_order = self.fields.keyOrder = ["email",
+            preferred_order = self.fields.keyOrder = ["first_name",
+                                                      "last_name",
+                                                      "email",
                                                       "password1", 
                                                       "password2"]
         # Make sure custom fields are put below main signup fields
@@ -232,6 +258,11 @@ class SignupForm(BaseSignupForm):
             user.set_password(password)
         if commit:
             user.save()
+            s = user.get_profile()
+            s.comment = self.cleaned_data.get("comment")
+            s.country = self.cleaned_data.get("country")
+            s.suscribed = self.cleaned_data.get("suscribed")
+            s.save()
         return user
     
     def save(self, request=None):

@@ -42,6 +42,8 @@ EMAIL_HOST_PASSWORD = 's0l1d4r1t4'
 EMAIL_PORT = 587
 EMAIL_CONFIRMATION_DAYS = 7
 
+AUTH_PROFILE_MODULE = 'signers.SignerProfile'
+
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
 USE_I18N = True
@@ -75,7 +77,7 @@ STATIC_URL = '/static/'
 # Additional locations of static files
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
 STATICFILES_DIRS = (
-    "/home/ricardo/Desktop/manifesto/manifesto/static"
+    'static',
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
 )

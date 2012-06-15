@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 class SignerProfile(models.Model):
   user = models.OneToOneField(User)
   comment = models.TextField(blank=True)
-  country = models.IntegerField(blank=True)
+  country = models.CharField(max_length=30)
   suscribed = models.BooleanField(default=False)
   
   def __unicode__(self):
