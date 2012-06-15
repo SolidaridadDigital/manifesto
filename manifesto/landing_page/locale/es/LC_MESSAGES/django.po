@@ -1,0 +1,95 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-06-08 12:43-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+#: templates/index.html:6
+msgid "Digital Solidarity Manifesto"
+msgstr "Manifiesto de Solidaridad Digital"
+
+#: templates/index.html:26
+msgid "Digital<span>Solidarity</span>Manifesto"
+msgstr "Manifiesto<span>Solidaridad</span>Digital"
+
+#: templates/index.html:27
+msgid "Going beyond "
+msgstr "Ir más allá"
+
+#: templates/index.html:30
+msgid "Experiences"
+msgstr "Experiencias"
+
+#: templates/index.html:40
+#, fuzzy
+msgid "Agile Manifesto"
+msgstr "Manifiesto Ágil"
+
+#: templates/index.html:41
+msgid ""
+"As digital professionals we commit to put our knowledge, skills and "
+"experience to the service of mankind. Through this work we want to invite to:"
+msgstr ""
+"Como profesionales digitales nos comprometemos a poner nuestro conocimiento, habilidades y "
+"experiencia al servicio de la humanidad. A través de este trabajo queremos invitar:"
+
+#: templates/index.html:42
+msgid "Go beyond well-crafted software"
+msgstr "Ir más allá del Software bien hecho"
+
+#: templates/index.html:43
+msgid "towards <strong>software that really matters</strong>"
+msgstr "Hacia <strong>software que realmente importe</strong>"
+
+#: templates/index.html:44
+msgid "Go beyond steadily adding value"
+msgstr "Ir más allá de constantemente agregar valor"
+
+#: templates/index.html:45
+msgid "towards <strong>constantly making this world a better place</strong>"
+msgstr "hacia <strong>constantemente hacer del mundo un lugar mejor</strong>"
+
+#: templates/index.html:46
+msgid "Go beyond a community of professionals"
+msgstr "Ir más allá de una comunidad de profesionales"
+
+#: templates/index.html:47
+msgid "towards <strong>a global culture of digital solidarity</strong>"
+msgstr "hacia <strong>una cultura global de solidaridad digital</strong>"
+
+#: templates/index.html:48
+msgid "Go beyond productive partnerships"
+msgstr "Ir más allá de sociedades productivas"
+
+#: templates/index.html:49
+msgid "towards <strong>a fraternity that takes care of the needy</strong>"
+msgstr ""
+"hacia <strong>una fraternidad que se preocupa de los necesitados</strong>"
+
+#: templates/index.html:50
+msgid ""
+"That is, if the items on the left are necessary for developing useful "
+"software and creating business value, we consider that the goals on the "
+"right also deserve our skills, energy and passion."
+msgstr ""
+"Es decir, si bien los puntos a la izquierda son necesarios para el desarrollo de software útil "
+"y la creación de valor de negocio, nosotros consideramos que los objetivos a la "
+"derecha también merecen nuestras habilidades, energía y pasión."
+
+#: templates/index.html:53
+msgid "Latest Signers"
+msgstr "Últimos Firmantes"
