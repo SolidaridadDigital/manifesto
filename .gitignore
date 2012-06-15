@@ -4,4 +4,4 @@
 settings.py
 *.db
 *.DS_Store
-*.
+*.py~
