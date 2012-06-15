@@ -1,0 +1,79 @@
+{% load staticfiles %}
+{% load i18n %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="es">
+<head>
+<title>{% trans "Digital Solidarity Manifesto" %}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" href="{% static 'css/CitrusIsland.css' %}" type="text/css" />
+{% comment %}
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32336771-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+{% endcomment %}
+</head>
+<body>
+<div id="wrap">
+  <div id="header">
+    <h1 id="logo"> {% trans "Digital<span>Solidarity</span>Manifesto" %}</h1>
+    <h2 id="slogan">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {% trans "Going beyond " %}...</h2>
+  </div>
+  <div id="sidebar" >
+    <h1>{% trans "Experiences" %}</h1>
+    <p>&quot;"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod 
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor 
+    in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur 
+    sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est 
+    laborum."&quot;</p>
+    <p class="align-right">- Trololius</p>
+  </div>
+  <div id="main"> <a name="TemplateInfo"></a>
+    <h2>{% trans "Agile Manifesto" %}</h2>
+    <p>{% trans "As digital professionals we commit to put our knowledge, skills and experience to the service of mankind. Through this work we want to invite to:" %}</p>
+	<p>{% trans "Go beyond well-crafted software" %}<br />
+	{% trans "towards <strong>software that really matters</strong>" %}</p>
+	<p>{% trans "Go beyond steadily adding value" %}<br/>
+	{% trans "towards <strong>constantly making this world a better place</strong>" %}</p>
+	<p>{% trans "Go beyond a community of professionals" %}<br/>
+	{% trans "towards <strong>a global culture of digital solidarity</strong>" %}</p>
+	<p>{% trans "Go beyond productive partnerships" %}<br/>
+	{% trans "towards <strong>a fraternity that takes care of the needy</strong>" %}</p>
+	<p>{% trans "That is, if the items on the left are necessary for developing useful software and creating business value, we consider that the goals on the right also deserve our skills, energy and passion." %}</p>
+  </div>
+  <div id="rightbar">
+    <h1>{% trans "Latest Signers" %}</h1>
+    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis 
+    praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias 
+    excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui 
+    officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
+  </div>
+</div>
+<div id="footer">
+  <div id="footer-content">
+    <div id="footer-right"> </div>
+    <div id="footer-left"> 
+        <form action="/i18n/setlang/" method="post">
+            {% csrf_token %}
+            <input name="next" type="hidden" value="{{ redirect_to }}" />
+                <select name="language">
+                    {% get_language_info_list for LANGUAGES as languages %}
+                    {% for language in languages %}
+                    <option value="{{ language.code }}">{{ language.name_local }} ({{ language.code }})</option>
+                    {% endfor %}
+                </select>
+            <input type="submit" value= '{% trans "change" %}' />
+        </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>
