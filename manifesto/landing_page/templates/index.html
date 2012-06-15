@@ -48,6 +48,14 @@
 	<p>{% trans "Go beyond productive partnerships" %}<br/>
 	{% trans "towards <strong>a fraternity that takes care of the needy</strong>" %}</p>
 	<p>{% trans "That is, if the items on the left are necessary for developing useful software and creating business value, we consider that the goals on the right also deserve our skills, energy and passion." %}</p>
+  <div id='form'>
+    <form action="" method="post" onsubmit="/accounts/signup/">
+            {% csrf_token %}
+            <table>
+                {{ form.as_table }}   
+                <tr><th><input type="submit" value="Firmar"></th></tr>
+            </table>
+        </form>
   </div>
   <div id="rightbar">
     <h1>{% trans "Latest Signers" %}</h1>
@@ -65,6 +73,7 @@
             {% csrf_token %}
             <input name="next" type="hidden" value="{{ redirect_to }}" />
                 <select name="language">
+                    {% get_available_languages as LANGUAGES %}
                     {% get_language_info_list for LANGUAGES as languages %}
                     {% for language in languages %}
                     <option value="{{ language.code }}">{{ language.name_local }} ({{ language.code }})</option>

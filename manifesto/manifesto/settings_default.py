@@ -1,6 +1,7 @@
 # Django settings for manifesto project.
-
-DEBUG = True
+from django.utils.translation import ugettext as _
+import os  
+PROJECT_ROOT = os.path.dirname(os.path.dirname(__file__))DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -12,7 +13,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'database.db',                      # Or path to database file if using sqlite3.
+        'NAME': os.path.join(PROJECT_ROOT, 'database.db'),                      # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -31,7 +32,7 @@ TIME_ZONE = 'America/Santiago'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'es-cl'
+LANGUAGE_CODE = 'en'
 
 SITE_ID = 1
 
@@ -106,6 +107,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
@@ -123,10 +125,18 @@ TEMPLATE_DIRS = (
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
-    "allauth.context_processors.allauth",
-    "allauth.account.context_processors.account",
-    'django.contrib.auth.context_processors.auth',
-    'django.core.context_processors.request'
+   "django.contrib.auth.context_processors.auth",  
+   "django.core.context_processors.debug",    
+   "django.core.context_processors.i18n",   
+   "django.core.context_processors.media",
+   "django.core.context_processors.static",
+   "django.core.context_processors.tz",
+   "django.contrib.messages.context_processors.messages"
+   )
+
+LANGUAGES = (
+    ('es', _('Spanish')),
+    ('en', _('English')),
 )
 
 AUTHENTICATION_BACKENDS = (
