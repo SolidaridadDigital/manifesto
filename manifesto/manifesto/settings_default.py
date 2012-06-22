@@ -162,6 +162,7 @@ INSTALLED_APPS = (
     'emailconfirmation',
     'allauth',
     'allauth.account',
+    'django.contrib.humanize'
 )
 
 # A sample logging configuration. The only tangible logging
