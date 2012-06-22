@@ -1,7 +1,8 @@
 # Django settings for manifesto project.
 from django.utils.translation import ugettext as _
 import os  
-PROJECT_ROOT = os.path.dirname(os.path.dirname(__file__))DEBUG = True
+PROJECT_ROOT = os.path.dirname(os.path.dirname(__file__))
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
