@@ -1,10 +1,11 @@
 {% load staticfiles %}
 {% load i18n %}
+{% load humanize %} 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="es">
 <head>
 <title>{% trans "Digital Solidarity Manifesto" %}</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" href="{% static 'css/CitrusIsland.css' %}" type="text/css" />
 {% comment %}
 <script type="text/javascript">
@@ -59,10 +60,17 @@
   </div>
   <div id="rightbar">
     <h1>{% trans "Latest Signers" %}</h1>
-    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis 
-    praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias 
-    excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui 
-    officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
+    <ul>
+      {% for user in users %}
+        <li>
+          <p>
+            {{ user.get_profile.country }} -> <i>'{{ user.get_profile.comment }}'</i>
+            {{ user.date_joined|naturaltime }},{{ user.get_full_name }}
+          </p>
+        </li>
+      {% endfor %}
+    </ul>
+    <a href="/all_signers/">Ver m&aacute;s</a>
   </div>
 </div>
 <div id="footer">
