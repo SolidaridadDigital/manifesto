@@ -91,12 +91,11 @@ blockquote {
 	border-left: 4px solid #FF9966;   
 }
 
-/* form elements */
+/* form elements 
 form {
 	margin:10px; padding: 5px;
 	border: 1px solid #f2f2f2; 
-	background-color: #FAFAFA; 
-}
+}*/
 label {
 	display:block;
 	font-weight:bold;
@@ -255,6 +254,13 @@ form.search input.button {
 #main {
 	float: left;
 	margin: 0 0 0 15px;
+	padding: 0;
+	width: 54%;	
+}
+
+#low-content {
+	float: center;
+	margin: 0 0 0 0px;
 	padding: 0;
 	width: 54%;	
 }
