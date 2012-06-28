@@ -3,23 +3,33 @@
 	function scroll_to(section) {
 		switch (section) { 
 		   	case 'manifesto': 
-		      	 $('html, body').animate({scrollTop:0}, 'fast');
+		      	 $('html, body').animate({scrollTop:0}, 'slow');
 		      	 break;
 		    case 'signers': 
-				     $('html, body').animate({scrollTop:740}, 'fast');
+				     $('html, body').animate({scrollTop:810}, 'slow');
 				     break; 
 		   	case 'experiences': 
-		      	 $('html, body').animate({scrollTop:1450}, 'fast'); 
+		      	 $('html, body').animate({scrollTop:1610}, 'slow'); 
 		      	 break; 
 		   	case 'about': 
-		      	 $('html, body').animate({scrollTop:2500}, 'fast');
+		      	 $('html, body').animate({scrollTop:2500}, 'slow');
 		      	 break; 
 		   	default: 
-		      	 $('html, body').animate({scrollTop:0}, 'fast');
+		      	 $('html, body').animate({scrollTop:0}, 'slow');
 		}
 	}
+	
+	$(document).ready(function(){
+		$('#logo span').mouseover(function(){
+			$(this).attr('class', 'yellow');
+		});
+		$('#logo span').mouseout(function(){
+			$(this).attr('class', 'light-blue');
+		});
+	});
 </script>
 <html>
+	<!-- fluor colors : http://www.awwwards.com/neon-fluor-could-be-a-new-trend-in-webdesign.html -->
 	<head>
 		<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<link rel="stylesheet" href="style.css" type="text/css" />
@@ -30,32 +40,36 @@
 			<!-- begin: header -->
 			<header>
 				<div id='header-wrapper' class='wrapper'>
-					<a href="javascript:scroll_to('manifesto')" id='logo'> Digital solidarity</a>
-					<div id='main-nav'>
-						<nav>
+					<a href="javascript:scroll_to('manifesto')" id='logo'>Digital Solidarity
+					</a>
+
+						<nav id='main-nav'>
 							<ul>
-								<li><a href="javascript:scroll_to('manifesto')">Manifesto</a></li>
+								<li><a href="javascript:scroll_to('manifesto')" id='link-manifesto'>Manifesto</a></li>
 								<li>|</li>
-								<li><a href="javascript:scroll_to('experiences');">Experiences</a></li>
+								<li><a href="javascript:scroll_to('signers');"  id='link-signers'>Signers</a></li>
 								<li>|</li>
-								<li><a href="javascript:scroll_to('signers');" >Signers</a></li>
+								<li><a href="javascript:scroll_to('experiences');"  id='link-experiences'>Experiences</a></li>
 								<li>|</li>
-								<li><a href="javascript:scroll_to('about');" >About</a></li>
+								<li><a href="javascript:scroll_to('about');"  id='link-about'>About</a></li>
 							</ul>
 						</nav>
-					</div>		
 			</header>
+
+
+			
 			<!-- end: header -->
 			<div class='clear'></div>
 			<!-- begin: content -->
 			<div id='content' class='wrapper'>
 				<section id='manifesto'>
 					<div class='one-third'>
-						<img src='' width='200px' height='200px'></img>
-						<p>Going beyond Software Craftmanship</p>
+						<img src='agile.png' width='250px'></img>
+						<p id='slogan'>Going <span class='orange'>beyond</span> Software Craftmanship</p>
 					</div>
 					<div class='two-thirds'>
-							<h2 class='green text-center'>Manifesto</h2>
+						<div id='the-manifesto'>
+							<h2 class='yellow'>Manifesto</h2>
 							<p>As digital professionals we commit to put our knowledge, 
 								<br/>
 								skills and experience to the service of mankind. 
@@ -63,15 +77,17 @@
 								Through this work we want to invite to: 
 							</p>
 								<ul>
-								<li>Go beyond well-crafted software towards software that matters</li>
-								<li>Go beyond steadily adding value towards constantly making this world a better place </li>
-								<li>Go beyond a community of professionals towards a global culture of digital solidarity </li>
-								<li>Go beyond productive partnerships towards a fraternity that takes care of the needy </li>
+								<li>Go beyond well-crafted software towards <strong>software that matters</strong></li>
+								<li>Go beyond steadily adding value towards <strong>constantly making this world a better place </strong></li>
+								<li>Go beyond a community of professionals 
+									towards <strong>a global culture of digital solidarity </strong></li>
+								<li>Go beyond productive partnerships 
+									towards <strong>a fraternity that takes care of the needy </strong></li>
 							</ul>
 								<p>
 								That is, if the items on the left are necessary for developing useful software and creating business value, 
 								we consider that the goals on the right also deserve our skills, energy and passion.</p>
-								
+						</div>		
 							<div class='form-box'>
 								<h3 class='light-blue'>Support</h3>
 								<form>
@@ -91,7 +107,7 @@
 				<!-- begin: signers -->
 				<section id='signers'>
 					<div class='wrapper'>
-						<h2 style='text-align:center' class='red'> Signers </h2>
+						<h2 style='text-align:center' class='orange'> Signers </h2>
 						<div class='one-third'>
 							<div class='center'>
 								<ul class='signer-list'>
@@ -121,6 +137,7 @@
 								<li><a class='button' href='#'>+ More</a></li>
 							</ul>
 						</div>
+						
 					</div>
 				</section>
 				<!-- end: signers -->
@@ -128,40 +145,71 @@
 				<!-- begin: experiences -->
 				<section id='experiences'>
 					<div class='wrapper'>
-						<h2 style='text-align:center' class='teal'> Experiences </h2>
+						<h2 class='teal'>Experiences</h2>
 						<div class='one-third'>
-							<div class='experience center'>
+							<div class='center'>
+								<h3>Chile ágil</h3>
 								<img width='200px' height='150px' />
-								<p>Lorem ipsum amet bla</p>
+							</div>
+							<div class='center'>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu magna ac magna hendrerit posuere. 
+									<a href=''>Read more</a>
+								</p>
 							</div>
 						</div>
 						<div class='one-third'>
-							<div class='experience center'>
+							<div class='center'>
+								<h3>Chile ágil</h3>
 								<img width='200px' height='150px' />
-								<p>Lorem ipsum amet bla</p>
+							</div>
+							<div class='center'>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu magna ac magna hendrerit posuere. 
+									<a href=''>Read more</a>
+								</p>
 							</div>
 						</div>
 						<div class='one-third'>
-							<div class='experience center'>
+							<div class='center'>
+								<h3>Chile ágil</h3>
 								<img width='200px' height='150px' />
-								<p>Lorem ipsum amet bla</p>
+							</div>
+							<div class='center'>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu magna ac magna hendrerit posuere. 
+									<a href=''>Read more</a>
+								</p>
 							</div>
 						</div>
 						<div class='one-third'>
-							<div class='experience center'>
+							<div class='center'>
+								<h3>Chile ágil</h3>
 								<img width='200px' height='150px' />
-								<p>Lorem ipsum amet bla</p>
+							</div>
+							<div class='center'>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu magna ac magna hendrerit posuere. 
+									<a href=''>Read more</a>
+								</p>
 							</div>
 						</div>
 						<div class='one-third'>
-							<div class='experience center'>
+							<div class='center'>
+								<h3>Chile ágil</h3>
 								<img width='200px' height='150px' />
-								<p>Lorem ipsum amet bla</p>
+							</div>
+							<div class='center'>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu magna ac magna hendrerit posuere. 
+									<a href=''>Read more</a>
+								</p>
 							</div>
 						</div>
 						<div class='one-third'>
-							<div class='experience center'>
-								<a class='button'>+ More</a>
+							<div class='center'>
+								<h3>Chile ágil</h3>
+								<img width='200px' height='150px' />
+							</div>
+							<div class='center'>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu magna ac magna hendrerit posuere. 
+									<a href=''>Read more</a>
+								</p>
 							</div>
 						</div>
 					</div>
@@ -172,23 +220,17 @@
 				<section id='about'>
 					<div class='wrapper'>
 						<h2 style='text-align:center' class='pink'> About </h2>
-						<div class='one-third'>
-							<div class='experience center'>
-								<img width='200px' height='150px' />
-								<p>Lorem ipsum amet bla</p>
-							</div>
-						</div>
-						<div class='one-third'>
-							<div class='experience center'>
-								<img width='200px' height='150px' />
-								<p>Lorem ipsum amet bla</p>
-							</div>
-						</div>
-						<div class='one-third'>
-							<div class='experience center'>
-								<img width='200px' height='150px' />
-								<p>Lorem ipsum amet bla</p>
-							</div>
+						<div class='center'>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec est mauris, vulputate congue tincidunt nec, pharetra ac libero. Aenean congue, neque at euismod lacinia, est orci ultricies mi, eu blandit augue massa et arcu. Pellentesque eget dolor sit amet mauris malesuada fringilla. Sed vitae felis non mi tempor egestas et ac nunc. Aliquam eget fermentum ligula. Cras sit amet vehicula sem. Duis porttitor diam sit amet neque dapibus in euismod massa hendrerit. Maecenas cursus vestibulum elit, sagittis malesuada tortor dignissim id. Vestibulum eget erat enim. Aenean et nulla turpis, scelerisque porta metus.</p>
+						<ul class='horizontal-list'>
+							<li><a href='http://www.chileagil.cl'> Chile agil </a></li>
+							<li>|</li>
+							<li><a href='http://www.chileagil.cl'> Chile agil </a></li>
+							<li>|</li>
+							<li><a href='http://www.chileagil.cl'> Chile agil </a></li>
+							<li>|</li>
+							<li><a href='http://www.chileagil.cl'> Chile agil </a></li>
+						<ul>
 						</div>
 					</div>
 				</section>

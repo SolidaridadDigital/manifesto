@@ -17,10 +17,29 @@
 	src: url(qury.woff);
 }
 
+/* general */
+
+strong {
+	color: #d3ff49;
+}
+img {
+	box-shadow: 1px 1px 5px #333;
+	border-radius: 3px;
+}
+
+.horizontal-list li{
+	display: inline-block;
+	margin:0;
+}
+
+.horizontal-list {
+	margin-top:10px;
+	
+}
 /* form box */
 .form-box {
-	background-color: #666;
-	border: 1px solid #555;
+	background-color: #292828;
+	border: 1px solid #242323;
 	padding: 30px;
 	margin-top: 20px;
 	padding-left: 65px;
@@ -40,18 +59,20 @@
 .form-box label {
 	width:75px;
 }
-
-
-.green {
-	color: #7AFF4F !important;
+/*
+#d3ff49
+#d3ff49
+*/
+.yellow {
+	color: #d3ff49 !important;
 }
 
 .light-blue {
 	color: #46d0fc !important;
 }
 
-.red {
-	color: #ff4922 !important;
+.orange {
+	color: #ff891f !important;
 }
 
 .teal {
@@ -101,7 +122,8 @@ h1, p, h2, h3, h4, h5, h6 {
 }
 
 h2{
-	margin-bottom:10px;
+	margin-bottom:15px;
+	text-align:center;
 }
 
 #logo {
@@ -111,6 +133,11 @@ h2{
 	margin-bottom:5px;
 	font-size:20px;
 	float:left;
+	margin:0;
+}
+
+#logo span {
+	padding:0;
 	margin:0;
 }
 
@@ -135,6 +162,37 @@ a, li, label, input[type='text'], input[type='password'], input[type='submit'], 
 
 a {
 	text-decoration:none; /* remove underline */
+	color: #46d0fc;
+}
+
+a:hover {
+	color: #d3ff49;
+}
+
+/* header */
+header a {
+	color:white;
+}
+
+header #link-manifesto:hover {
+	color: #d3ff49;
+}
+
+header #link-signers:hover {
+	color: #ff891f;
+}
+
+header #link-about:hover {
+	color: #ff38d1;
+}
+
+#main-nav li {
+
+		display:table;
+		float:left;
+		margin-left:5px;
+		margin-right:5px;
+
 }
 
 /* inputs */
@@ -158,7 +216,7 @@ input[type='submit'] {
 }
 
 input[type='submit']:hover {
-	background-color: #46d0fc;
+	background-color: #6ED7F8;
 }
 
 .button {
@@ -172,6 +230,12 @@ input[type='submit']:hover {
 	padding-top: 4px;
 	padding-bottom: 4px;
 	box-shadow: 1px 1px 0 #888;
+	color:white;
+}
+
+.button:hover {
+	color:white;
+	background-color: #6ED7F8;
 }
 
 
@@ -186,7 +250,7 @@ ul {
 body {
 	margin:0;
 	background:url(bg-diago.png) repeat;/*#68B8AE;*/
-	background-color:#5a5a5a;/*#008EB4;*/
+	background-color:#1a1a1a;/*#008EB4;*/
 	/*text-shadow: 1px 1px 0 #ececec;*/
 }
 
@@ -241,17 +305,13 @@ header {
 	text-align: center;
 	z-index:99999;
 	height:35px;
-	padding-top:10px;	
+	padding-top:10px;
+	box-shadow: 0 2px 10px #CCC;	
 	background: url(bg-header.png) repeat;
 	clear: both;
 }
 
-header nav li{
-	display:table;
-	float:left;
-	margin-left:10px;
-	margin-right:10px;
-}
+
 
 #languaje_picker {
 	float:right;
@@ -313,15 +373,57 @@ section {
 /* content */
 #content {
 	position:relative;
-	top:120px;
+	top:80px;
 }
 
 .one-third {
 	vertical-align:top;
-	width:30%;
+	width:33%;
 }
 
 .two-thirds {
 	vertical-align:top;
-	width:69%;
+	width:66%;
+}
+/* manifesto */
+#the-manifesto p {
+	margin-bottom:10px;
+}
+
+#the-manifesto ul, li {
+	margin:0;
+	margin-bottom:10px;
+}
+
+#the-manifesto ul {
+	margin-bottom:20px;
+	margin-top:20px;
+}
+
+#slogan {
+	margin-top:10px;
+}
+/* lang-picker */
+#lang-picker {
+	position:fixed;
+	z-index:99999;
+	
+}
+
+/* experiences */
+#experiences .one-third {
+	margin-bottom:20px;
+}
+
+#experiences p {
+	margin-top:10px;
+}
+
+#experiences h3 {
+	margin-bottom:10px;
+}
+
+/* signers */
+.signer-list img {
+	margin-right:10px;
 }
