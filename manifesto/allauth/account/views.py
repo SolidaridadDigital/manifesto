@@ -76,7 +76,7 @@ def signup(request, **kwargs):
                                                        reverse("account_login")),
            "redirect_field_name": redirect_field_name,
            "redirect_field_value": request.REQUEST.get(redirect_field_name) }
-    return render_to_response(template_name, RequestContext(request, ctx))
+    return render_to_response('index.html', RequestContext(request, ctx))
 
 
 @login_required

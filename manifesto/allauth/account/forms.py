@@ -257,6 +257,7 @@ class SignupForm(BaseSignupForm):
         if password:
             user.set_password(password)
         if commit:
+            user.is_active = False
             user.save()
             s = user.get_profile()
             s.comment = self.cleaned_data.get("comment")
