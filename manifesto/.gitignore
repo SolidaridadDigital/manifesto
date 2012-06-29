@@ -1,0 +1,8 @@
+*.log
+*.pot
+*.pyc
+settings.py
+*.db
+*.DS_Store
+*.py~
+*~
