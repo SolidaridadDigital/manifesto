@@ -12,25 +12,27 @@
 
 	<script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	<script src="{% static 'js/jquery.validate.js' %}" type="text/javascript"></script>
+
 	<script type='text/javascript'>
-	  function scroll_to(section) {
-	    switch (section) { 
-		case 'manifesto': 
-		     $('html, body').animate({scrollTop:0}, 'slow');
-		     break;
-		case 'signers': 
-		     $('html, body').animate({scrollTop:1110}, 'slow');
-		     break; 
-		case 'experiences': 
-		     $('html, body').animate({scrollTop:1900}, 'slow'); 
-		     break; 
-		case 'about': 
-		     $('html, body').animate({scrollTop:2700}, 'slow');
-		     break; 
-		default: 
-		     $('html, body').animate({scrollTop:0}, 'slow');
-	    }
-	  }
+
+	function scroll_to(section) {
+	switch (section) { 
+	case 'manifesto': 
+	     $('html, body').animate({scrollTop:0}, 'slow');
+	     break;
+	case 'signers': 
+	     $('html, body').animate({scrollTop:1050}, 'slow');
+	     break; 
+	case 'experiences': 
+	     $('html, body').animate({scrollTop:1600}, 'slow'); 
+	     break; 
+	case 'about': 
+	     $('html, body').animate({scrollTop:2700}, 'slow');
+	     break; 
+	default: 
+	     $('html, body').animate({scrollTop:0}, 'slow');
+		}
+	}
 	  
 	  $(document).ready(function(){
 	    $('#logo span').mouseover(function(){
@@ -259,7 +261,7 @@
                 <h3>Chile ál</h3>
                 <img width='300px' height='129px' src="{% static 'images/ayuda.png' %}" />
               </div>
-              <div class='center'>
+              <div class='center' id="experience-txt">
                 <p>After the 2010 chilean earthquake, 300 volunteers from many professions around digital technologies joined on an amusing project: build a website as a hub to organize the information that the citizens and government of Chile needed to better help the victims of the tragedy.
 
 Many lessons were learned, many of them summarized on the presentation .One earthquake, 300 volunteers and 6 days to build a portal. given at the 10th Agile Manifesto anniversary Conference Agile2011. 
@@ -284,7 +286,7 @@ Many lessons were learned, many of them summarized on the presentation .One eart
         <section id='about'>
           <div class='wrapper'>
             <h2 style='text-align:center' class='pink'> {% trans "About" %} </h2>
-            <div class='center'>
+            <div class='center' id="experience-txt">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec est mauris, vulputate congue tincidunt nec, pharetra ac libero. Aenean congue, neque at euismod lacinia, est orci ultricies mi, eu blandit augue massa et arcu. Pellentesque eget dolor sit amet mauris malesuada fringilla. Sed vitae felis non mi tempor egestas et ac nunc. Aliquam eget fermentum ligula. Cras sit amet vehicula sem. Duis porttitor diam sit amet neque dapibus in euismod massa hendrerit. Maecenas cursus vestibulum elit, sagittis malesuada tortor dignissim id. Vestibulum eget erat enim. Aenean et nulla turpis, scelerisque porta metus.</p>
             <ul class='horizontal-list'>
               <li><a href='http://www.chileagil.cl'> Chile agil </a></li>
