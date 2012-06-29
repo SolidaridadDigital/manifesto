@@ -3,6 +3,7 @@
 {% load humanize %} 
 
 <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="{% static 'js/jquery.validate.js' %}" type="text/javascript"></script>
 <script type='text/javascript'>
   function scroll_to(section) {
     switch (section) { 
@@ -32,6 +33,12 @@
     });
   });
 </script>
+
+  <script type="text/javascript">
+      $(document).ready(function() {
+          $("#registerForm").validate();
+      });
+  </script>
 
 <!--
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -243,13 +250,53 @@
               <div class='form-box'>
                 <h3 class='light-blue'>{% Support %}</h3>
                 <br>
-                <form action="/accounts/signup/" method="post">
-                        {% csrf_token %}
-                        <table>
-                            {{ form.as_table }}   
-                            <tr><td></td><td><input type="submit" value="{% Sign %}"></td></tr>
-                        </table>
-                </form>
+                <form action="/accounts/signup/" id="registerForm" method="post">
+                    {% csrf_token %}
+                    <table>
+                      {% for hidden in form.hidden_fields %}
+                        {{ hidden }}
+                      {% endfor %}
+
+                      <tr>
+                        <th><label for="id_first_name">Nombre:</label></th>
+                        <td><input id="id_first_name" class="required" type="text" name="first_name" maxlength="30" /></td>
+                      </tr>
+                      <tr>
+                        <th><label for="id_last_name">Apellido:</label></th>
+                        <td><input id="id_last_name" class="required" type="text" name="last_name" maxlength="30" /></td>
+                      </tr>
+                      <tr>
+                        <th><label for="id_email">E-mail:</label></th>
+                        <td><input type="text" class="required email" emailUnique="/email_unique/" name="email" id="id_email" /></td>
+                      </tr>
+                      <tr>
+                        <th><label for="id_password1">Password:</label></th>
+                        <td><input type="password" class="required password" minlength="2" name="password1" id="password1" /></td>
+                      </tr>
+                      <tr>
+                        <th><label for="id_password2">Password (again):</label></th>
+                        <td><input type="password" class="required" equalTo="#password1" name="password2" id="id_password2" /></td>
+                      </tr>
+                      <tr>
+                        <th><label for="id_comment">Comentario:</label></th>
+                        <td><textarea id="id_comment" rows="10" cols="40" name="comment"></textarea></td>
+                      </tr>
+                      <tr>
+                        <th><label for="id_country">Pais:</label></th>
+                        <td><input type="text" name="country" id="id_country" /></td>
+                      </tr>
+                      <tr>
+                        <th><label for="id_suscribed">Suscrito:</label></th>
+                        <td>
+                          <input type="checkbox" name="suscribed" id="id_suscribed" />
+                          <input type="hidden" name="confirmation_key" id="id_confirmation_key" />
+                        </td>
+                      </tr>   
+                      <tr>
+                        <th><input type="submit" class="submit" value="Firmar"></th>
+                      </tr>
+                    </table>
+                  </form>
                 <!--
                 <form>
                   <ul>
