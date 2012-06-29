@@ -324,6 +324,7 @@
           <div class='wrapper'>
             <h2 style='text-align:center' class='orange'> {% trans "Signers" %} </h2>
               <ul class='signer-list'>
+            {{users}}
             {% for user in users %}
               
               <!--
@@ -337,7 +338,7 @@
               
 
                     
-                    <li><img title="{{ user.get_profile.comment }}" alt="{{ user.get_profile.comment }}" width='80px' height='80px' src="http://www.gravatar.com/avatar/{{ user.mail }}" />{{ user.get_full_name }}</li>
+                    <li><img title="{{ user.get_profile.comment }}" alt="{{ user.get_profile.comment }}" width='80px' height='80px' src="http://www.gravatar.com/avatar/{{ user.mail }}" /><span>{{ user.get_full_name }}</span></li>
 
                 
 
@@ -387,8 +388,8 @@
             <h2 class='teal'>{% trans "Experiences" %}</h2>
             <div class=''>
               <div class='center'>
-                <h3>Chile ágil</h3>
-                <img width='300px' height='129px' src="{% static 'images/agil.png' %}" />
+                <h3>Chile Ayuda</h3>
+                <img width='300px' height='129px' src="{% static 'images/ayuda.png' %}" />
               </div>
               <div class='center'>
                 <p>After the 2010 chilean earthquake, 300 volunteers from many professions around digital technologies joined on an amusing project: build a website as a hub to organize the information that the citizens and government of Chile needed to better help the victims of the tragedy.
@@ -416,7 +417,7 @@ Many lessons were learned, many of them summarized on the presentation “One ea
           <div class='wrapper'>
             <h2 style='text-align:center' class='pink'> {% trans "About" %} </h2>
             <div class='center'>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec est mauris, vulputate congue tincidunt nec, pharetra ac libero. Aenean congue, neque at euismod lacinia, est orci ultricies mi, eu blandit augue massa et arcu. Pellentesque eget dolor sit amet mauris malesuada fringilla. Sed vitae felis non mi tempor egestas et ac nunc. Aliquam eget fermentum ligula. Cras sit amet vehicula sem. Duis porttitor diam sit amet neque dapibus in euismod massa hendrerit. Maecenas cursus vestibulum elit, sagittis malesuada tortor dignissim id. Vestibulum eget erat enim. Aenean et nulla turpis, scelerisque porta metus.</p>
+              <p>{% trans  "This is an initiative from <a href="www.digitalesporchile.org">Digitales por Chile</a> foundation" %}</p>
             <ul class='horizontal-list'>
               <li><a href='http://www.chileagil.cl'> Chile agil </a></li>
               <li>|</li>
