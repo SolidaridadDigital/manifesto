@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-29 12:16-0400\n"
+"POT-Creation-Date: 2012-06-29 13:36-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -118,11 +118,11 @@ msgstr "cambio"
 msgid "Manifesto"
 msgstr "Manifiesto"
 
-#: templates/index.html:196 templates/index.html.py:325
+#: templates/index.html:196 templates/index.html.py:326
 msgid "Signers"
 msgstr "Firmantes"
 
-#: templates/index.html:200 templates/index.html.py:463
+#: templates/index.html:200 templates/index.html.py:419
 msgid "About"
 msgstr "Acerca de"
 
@@ -130,51 +130,57 @@ msgstr "Acerca de"
 msgid "Going beyond Software Craftmanship"
 msgstr "Ir más allá de la Artesania del Software"
 
-#: templates/index.html:252
+#: templates/index.html:253
 msgid "Subscribe"
 msgstr "Suscribase"
 
-#: templates/index.html:262
+#: templates/index.html:263
 msgid "Name:"
 msgstr "Nombre:"
 
-#: templates/index.html:266
+#: templates/index.html:267
 msgid "Last Name:"
 msgstr "Apellido:"
 
-#: templates/index.html:270
+#: templates/index.html:271
 msgid "E-mail:"
 msgstr "Correo:"
 
-#: templates/index.html:274
+#: templates/index.html:275
 msgid "Password:"
 msgstr "Contraseña:"
 
-#: templates/index.html:278
+#: templates/index.html:279
 msgid "Password (again):"
 msgstr "Contraseña (de nuevo):"
 
-#: templates/index.html:282
+#: templates/index.html:283
 msgid "Comment:"
 msgstr "Comentario:"
 
-#: templates/index.html:286
+#: templates/index.html:287
 msgid "Country:"
 msgstr "País:"
 
-#: templates/index.html:290
+#: templates/index.html:291
 msgid "Suscribed:"
 msgstr "Suscrito:"
 
-#: templates/index.html:297
+#: templates/index.html:298
 msgid "Sign"
 msgstr "Firmar"
 
-#: templates/index.html:397 templates/index.html.py:408
-#: templates/index.html:419 templates/index.html.py:430
-#: templates/index.html:441 templates/index.html.py:452
+#: templates/index.html:399
 msgid "Read more"
 msgstr "Leer más"
+
+#: templates/index.html:421
+msgid ""
+"This is an initiative from <a href=\"www.digitalesporchile.org\">Digitales "
+"por Chile</a> foundation"
+msgstr ""
+"Esta es una iniciativa de la fundación <a href=\"www.digitalesporchile.org\">Digitales "
+"por Chile</a>"
 
 #~ msgid "Support"
 #~ msgstr "Soporte"
