@@ -190,13 +190,13 @@
 
             <nav id='main-nav'>
               <ul>
-                <li><a href="javascript:scroll_to('manifesto')" id='link-manifesto'>Manifesto</a></li>
+                <li><a href="javascript:scroll_to('manifesto')" id='link-manifesto'>{% trans "Manifesto" %}</a></li>
                 <li>|</li>
-                <li><a href="javascript:scroll_to('signers');"  id='link-signers'>Signers</a></li>
+                <li><a href="javascript:scroll_to('signers');"  id='link-signers'>{% trans "Signers" %}</a></li>
                 <li>|</li>
-                <li><a href="javascript:scroll_to('experiences');"  id='link-experiences'>Experiences</a></li>
+                <li><a href="javascript:scroll_to('experiences');"  id='link-experiences'>{% trans "Experiences" %}</a></li>
                 <li>|</li>
-                <li><a href="javascript:scroll_to('about');"  id='link-about'>About</a></li>
+                <li><a href="javascript:scroll_to('about');"  id='link-about'>{% trans "About" %}</a></li>
                 <li>|</li>
                 <li>
                     <form action="/i18n/setlang/" method="post" id="language">
@@ -228,11 +228,11 @@
         <section id='manifesto'>
           <div class='one-third'>
             <img src="{% static 'images/agile.png' %}" width='250px'></img>
-            <p id='slogan'>{% trans "Going beyond " %} Software Craftmanship</p>
+            <p id='slogan'>{% trans "Going beyond Software Craftmanship" %}</p>
           </div>
           <div class='two-thirds'>
             <div id='the-manifesto'>
-              <h2 class='yellow'>Manifesto</h2>
+              <h2 class='yellow'>{% trans "Manifesto" %}</h2>
               <p>{% trans "As digital professionals we commit to put our knowledge, skills and experience to the service of mankind. Through this work we want to invite to:" %}
               </p>
                 <ul>
@@ -248,7 +248,7 @@
                 </p>
             </div>    
               <div class='form-box'>
-                <h3 class='light-blue'>{% Support %}</h3>
+                <h3 class='light-blue'>{% trans "Support" %}</h3>
                 <br>
                 <form action="/accounts/signup/" id="registerForm" method="post">
                     {% csrf_token %}
@@ -258,35 +258,35 @@
                       {% endfor %}
 
                       <tr>
-                        <th><label for="id_first_name">Nombre:</label></th>
+                        <th><label for="id_first_name">{% trans "Name:" %}</label></th>
                         <td><input id="id_first_name" class="required" type="text" name="first_name" maxlength="30" /></td>
                       </tr>
                       <tr>
-                        <th><label for="id_last_name">Apellido:</label></th>
+                        <th><label for="id_last_name">{% trans "Last Name:" %}</label></th>
                         <td><input id="id_last_name" class="required" type="text" name="last_name" maxlength="30" /></td>
                       </tr>
                       <tr>
-                        <th><label for="id_email">E-mail:</label></th>
+                        <th><label for="id_email">{% trans "E-mail:" %}</label></th>
                         <td><input type="text" class="required email" emailUnique="/email_unique/" name="email" id="id_email" /></td>
                       </tr>
                       <tr>
-                        <th><label for="id_password1">Password:</label></th>
+                        <th><label for="id_password1">{% trans "Password:" %}</label></th>
                         <td><input type="password" class="required password" minlength="2" name="password1" id="password1" /></td>
                       </tr>
                       <tr>
-                        <th><label for="id_password2">Password (again):</label></th>
+                        <th><label for="id_password2">{% trans "Password (again):" %}</label></th>
                         <td><input type="password" class="required" equalTo="#password1" name="password2" id="id_password2" /></td>
                       </tr>
                       <tr>
-                        <th><label for="id_comment">Comentario:</label></th>
+                        <th><label for="id_comment">{% trans "Comment:" %}</label></th>
                         <td><textarea id="id_comment" rows="10" cols="40" name="comment"></textarea></td>
                       </tr>
                       <tr>
-                        <th><label for="id_country">Pais:</label></th>
+                        <th><label for="id_country">{% trans "Country:" %}</label></th>
                         <td><input type="text" name="country" id="id_country" /></td>
                       </tr>
                       <tr>
-                        <th><label for="id_suscribed">Suscrito:</label></th>
+                        <th><label for="id_suscribed">{% trans "Suscribed:" %}</label></th>
                         <td>
                           <input type="checkbox" name="suscribed" id="id_suscribed" />
                           <input type="hidden" name="confirmation_key" id="id_confirmation_key" />
@@ -321,7 +321,7 @@
 
 
           <div class='wrapper'>
-            <h2 style='text-align:center' class='orange'> {% Signers %} </h2>
+            <h2 style='text-align:center' class='orange'> {% trans "Signers" %} </h2>
 
             {% for user in users %}
               
@@ -385,7 +385,7 @@
         <!-- begin: experiences -->
         <section id='experiences'>
           <div class='wrapper'>
-            <h2 class='teal'>{% Experiences %}</h2>
+            <h2 class='teal'>{% trans "Experiences" %}</h2>
             <div class='one-third'>
               <div class='center'>
                 <h3>Chile ágil</h3>
@@ -393,7 +393,7 @@
               </div>
               <div class='center'>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu magna ac magna hendrerit posuere. 
-                  <a href=''>{% Read more %}</a>
+                  <a href=''>{% trans "Read more" %}</a>
                 </p>
               </div>
             </div>
@@ -404,7 +404,7 @@
               </div>
               <div class='center'>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu magna ac magna hendrerit posuere. 
-                  <a href=''>{% Read more %}</a>
+                  <a href=''>{% trans "Read more" %}</a>
                 </p>
               </div>
             </div>
@@ -415,7 +415,7 @@
               </div>
               <div class='center'>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu magna ac magna hendrerit posuere. 
-                  <a href=''>{% Read more %}</a>
+                  <a href=''>{% trans "Read more" %}</a>
                 </p>
               </div>
             </div>
@@ -426,7 +426,7 @@
               </div>
               <div class='center'>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu magna ac magna hendrerit posuere. 
-                  <a href=''>{% Read more %}</a>
+                  <a href=''>{% trans "Read more" %}</a>
                 </p>
               </div>
             </div>
@@ -437,7 +437,7 @@
               </div>
               <div class='center'>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu magna ac magna hendrerit posuere. 
-                  <a href=''>{% Read more %}</a>
+                  <a href=''>{% trans "Read more" %}</a>
                 </p>
               </div>
             </div>
@@ -448,7 +448,7 @@
               </div>
               <div class='center'>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu magna ac magna hendrerit posuere. 
-                  <a href=''>{% Read more %}</a>
+                  <a href=''>{% trans "Read more" %}</a>
                 </p>
               </div>
             </div>
@@ -459,7 +459,7 @@
         <!-- begin: about -->
         <section id='about'>
           <div class='wrapper'>
-            <h2 style='text-align:center' class='pink'> {% About %} </h2>
+            <h2 style='text-align:center' class='pink'> {% trans "About" %} </h2>
             <div class='center'>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec est mauris, vulputate congue tincidunt nec, pharetra ac libero. Aenean congue, neque at euismod lacinia, est orci ultricies mi, eu blandit augue massa et arcu. Pellentesque eget dolor sit amet mauris malesuada fringilla. Sed vitae felis non mi tempor egestas et ac nunc. Aliquam eget fermentum ligula. Cras sit amet vehicula sem. Duis porttitor diam sit amet neque dapibus in euismod massa hendrerit. Maecenas cursus vestibulum elit, sagittis malesuada tortor dignissim id. Vestibulum eget erat enim. Aenean et nulla turpis, scelerisque porta metus.</p>
             <ul class='horizontal-list'>
