@@ -6,8 +6,8 @@ class Case(models.Model):
   user = models.ForeignKey(SignerProfile)
   title = models.CharField(max_length=80)
   description = models.TextField(blank = True)
-  case_date = models.DateTimeField()
-  publish_date = models.DateTimeField()
+  case_date = models.DateField()
+  publish_date = models.DateField()
   
   def __unicode__(self):
     return self.title

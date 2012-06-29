@@ -1,7 +1,10 @@
 from models import Case, CaseForm
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response
 from django.http import HttpResponseRedirect
 from django.utils import timezone
+from django.template import RequestContext
+import json
+from math import ceil
 
 def case_submit(request):
     if request.method == 'POST': # If the form has been submitted...
@@ -27,3 +30,16 @@ def case_submit(request):
     return render(request, 'case_submit.html', {
         'form': form,
     })
+# $.post('http://localhost:8000/cases/list', {n_page: 1 , 'csrfmiddlewaretoken': 'zpy3KJ9vXuVoBDP8Xgtm52cARj8r9IzN'}, function(){alert("exito")});
+def all_cases(request):
+    cases = Case.objects.all().order_by('-publish_date')
+    L = []
+    for case in cases:
+      L.append({'title': case.title, 'content': case.description, 'date': str(case.case_date)})
+    if request.method == 'POST':
+      n_page = int(request.POST['n_page'])
+      sublist = L[int(((n_page+1) % ceil(len(L)/6.0)) * 6) : int(((n_page+1) % ceil(len(L)/6.0)) * 6) + 6]
+    else:
+      sublist = L
+    s = json.dumps(sublist)
+    return render_to_response('cases_list.html', {'cases': s}, context_instance = RequestContext(request))
