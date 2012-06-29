@@ -333,14 +333,13 @@
                 </p>
               </li>
             -->
-
-              <div class='one-third'>
-                <div class='center'>
-                  <ul class='signer-list'>
+              {% cycle "<div class='one-third'><div class='center'><ul class='signer-list'>" "" "" "" ""%}
+              
+                
                     <li><img title="{{ user.get_profile.comment }}" alt="{{ user.get_profile.comment }}" width='80px' height='80px' src="http://www.gravatar.com/avatar/{{ user.mail }}" />{{ user.get_full_name }}</li>
-                  </ul>
-                </div>
-              </div>
+                  
+                
+              % cycle "</ul></div></div>" "" "" "" ""%}
 
              
             {% endfor %}
