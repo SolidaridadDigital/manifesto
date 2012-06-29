@@ -248,6 +248,7 @@
                 </p>
             </div>    
               <div class='form-box'>
+                {% block content %}
                 <h3 class='light-blue'>{% trans "Subscribe" %}</h3>
                 <br>
                 <form action="/accounts/signup/" id="registerForm" method="post">
@@ -267,7 +268,7 @@
                       </tr>
                       <tr>
                         <th><label for="id_email">{% trans "E-mail:" %}</label></th>
-                        <td><input type="text" class="required email" emailUnique="/email_unique/" name="email" id="id_email" /></td>
+                        <td><input id="id_email" type="text" class="required email" emailUnique="/email_unique/" name="email" id="id_email" /></td>
                       </tr>
                       <tr>
                         <th><label for="id_password1">{% trans "Password:" %}</label></th>
@@ -307,7 +308,7 @@
                   </ul>
                 </form>
                 -->
-
+                {% endblock %}
               </div>
               
             </div>
