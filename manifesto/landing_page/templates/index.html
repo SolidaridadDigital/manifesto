@@ -339,7 +339,7 @@
                     <li><img title="{{ user.get_profile.comment }}" alt="{{ user.get_profile.comment }}" width='80px' height='80px' src="http://www.gravatar.com/avatar/{{ user.mail }}" />{{ user.get_full_name }}</li>
                   
                 
-              % cycle "</ul></div></div>" "" "" "" ""%}
+              % cycle "" "" "" "" "</ul></div></div>" %}
 
              
             {% endfor %}
@@ -391,7 +391,9 @@
                 <img width='200px' height='150px' />
               </div>
               <div class='center'>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu magna ac magna hendrerit posuere. 
+                <p>After the 2010 chilean earthquake, 300 volunteers from many professions around digital technologies joined on an amusing project: build a website as a hub to organize the information that the citizens and government of Chile needed to better help the victims of the tragedy.
+
+Many lessons were learned, many of them summarized on the presentation “One earthquake, 300 volunteers and 6 days to build a portal” given at the 10th Agile Manifesto anniversary Conference Agile2011. 
                   <a href=''>{% trans "Read more" %}</a>
                 </p>
               </div>
