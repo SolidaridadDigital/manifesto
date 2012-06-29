@@ -1,6 +1,7 @@
 import base64
 import re
 import uuid
+import csv
 
 from django import forms
 from django.conf import settings
@@ -208,11 +209,12 @@ class SignupForm(BaseSignupForm):
         widget = forms.Textarea,
         required = False)
 
-    #ARREGLAR DESPUES CUANDO TENGAMOS LA LISTA DE PAISES#####
-    country = forms.CharField(
-        label = _("Country"),
-        required=False)
-    #####################################
+    file_countries = csv.reader(open('../utilidades/iso3166.csv'), delimiter=',')
+
+    with open('../utilidades/iso3166.csv', 'rb') as file_countries:
+        countries = [(row['Code'], row['English']) for row in csv.DictReader(file_countries)]
+
+    country = forms.ChoiceField(choices = countries)
 
     suscribed = forms.BooleanField(
         label = _("Suscribed"),

@@ -6,9 +6,16 @@ from allauth.account.forms import SignupForm
 from signers.models import SignerProfile
 from django.contrib.auth.models import User
 from django.http import HttpResponse
+import csv
 
 def index(request):
-    return render_to_response('index.html', {'form': SignupForm()}, context_instance = RequestContext(request))
+    with open('../utilidades/iso3166.csv', 'rb') as file_countries:
+        countries = [(row['Code'], row['English']) for row in csv.DictReader(file_countries)]
+    countries2 = []    
+    for country in countries:
+        countries2.append(country[1])
+
+    return render_to_response('index.html', {'form': SignupForm(),'countries':countries2}, context_instance = RequestContext(request))
 
 def all_signers(request):
     users = User.objects.filter(is_active=True).order_by('-date_joined')
