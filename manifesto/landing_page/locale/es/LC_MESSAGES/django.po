@@ -21,7 +21,7 @@ msgstr ""
 #: templates/index.html:47 templates/index.html.py:165
 #: templates/signers.html:9 templates/signers.html.py:110
 msgid "Digital Solidarity Manifesto"
-msgstr "Manifiesto de Solidaridad Digital"
+msgstr "Digital Solidarity Manifesto"
 
 #: templates/index.html:67 templates/index.html.py:189
 #: templates/signers.html:29 templates/signers.html.py:134
