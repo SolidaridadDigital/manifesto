@@ -241,13 +241,13 @@
                 </p>
             </div>    
               <div class='form-box'>
-                <h3 class='light-blue'>Support</h3>
+                <h3 class='light-blue'>{% Support %}</h3>
                 <br>
                 <form action="/accounts/signup/" method="post">
                         {% csrf_token %}
                         <table>
                             {{ form.as_table }}   
-                            <tr><td></td><td><input type="submit" value="Firmar"></td></tr>
+                            <tr><td></td><td><input type="submit" value="{% Sign %}"></td></tr>
                         </table>
                 </form>
                 <!--
@@ -274,7 +274,7 @@
 
 
           <div class='wrapper'>
-            <h2 style='text-align:center' class='orange'> Signers </h2>
+            <h2 style='text-align:center' class='orange'> {% Signers %} </h2>
 
             {% for user in users %}
               
@@ -338,7 +338,7 @@
         <!-- begin: experiences -->
         <section id='experiences'>
           <div class='wrapper'>
-            <h2 class='teal'>Experiences</h2>
+            <h2 class='teal'>{% Experiences %}</h2>
             <div class='one-third'>
               <div class='center'>
                 <h3>Chile ágil</h3>
@@ -346,7 +346,7 @@
               </div>
               <div class='center'>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu magna ac magna hendrerit posuere. 
-                  <a href=''>Read more</a>
+                  <a href=''>{% Read more %}</a>
                 </p>
               </div>
             </div>
@@ -357,7 +357,7 @@
               </div>
               <div class='center'>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu magna ac magna hendrerit posuere. 
-                  <a href=''>Read more</a>
+                  <a href=''>{% Read more %}</a>
                 </p>
               </div>
             </div>
@@ -368,7 +368,7 @@
               </div>
               <div class='center'>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu magna ac magna hendrerit posuere. 
-                  <a href=''>Read more</a>
+                  <a href=''>{% Read more %}</a>
                 </p>
               </div>
             </div>
@@ -379,7 +379,7 @@
               </div>
               <div class='center'>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu magna ac magna hendrerit posuere. 
-                  <a href=''>Read more</a>
+                  <a href=''>{% Read more %}</a>
                 </p>
               </div>
             </div>
@@ -390,7 +390,7 @@
               </div>
               <div class='center'>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu magna ac magna hendrerit posuere. 
-                  <a href=''>Read more</a>
+                  <a href=''>{% Read more %}</a>
                 </p>
               </div>
             </div>
@@ -401,7 +401,7 @@
               </div>
               <div class='center'>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu magna ac magna hendrerit posuere. 
-                  <a href=''>Read more</a>
+                  <a href=''>{% Read more %}</a>
                 </p>
               </div>
             </div>
@@ -412,7 +412,7 @@
         <!-- begin: about -->
         <section id='about'>
           <div class='wrapper'>
-            <h2 style='text-align:center' class='pink'> About </h2>
+            <h2 style='text-align:center' class='pink'> {% About %} </h2>
             <div class='center'>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec est mauris, vulputate congue tincidunt nec, pharetra ac libero. Aenean congue, neque at euismod lacinia, est orci ultricies mi, eu blandit augue massa et arcu. Pellentesque eget dolor sit amet mauris malesuada fringilla. Sed vitae felis non mi tempor egestas et ac nunc. Aliquam eget fermentum ligula. Cras sit amet vehicula sem. Duis porttitor diam sit amet neque dapibus in euismod massa hendrerit. Maecenas cursus vestibulum elit, sagittis malesuada tortor dignissim id. Vestibulum eget erat enim. Aenean et nulla turpis, scelerisque porta metus.</p>
             <ul class='horizontal-list'>
