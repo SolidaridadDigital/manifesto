@@ -133,10 +133,10 @@ class BaseSignupForm(_base_signup_form_class()):
     )
     email = forms.EmailField(widget=forms.TextInput())
     first_name = forms.CharField(
-        label = _("Nombre"),
+        label = _("Name"),
         max_length = 30)
     last_name = forms.CharField(
-        label = _("Apellido"),
+        label = _("Last Name"),
         max_length = 30)
 
     def __init__(self, *args, **kwargs):
@@ -204,18 +204,18 @@ class SignupForm(BaseSignupForm):
 	widget = forms.PasswordInput(render_value=app_settings.PASSWORD_INPUT_RENDER_VALUE)
     )
     comment = forms.CharField(
-        label = _("Comentario"),
+        label = _("Comment"),
         widget = forms.Textarea,
         required = False)
 
     #ARREGLAR DESPUES CUANDO TENGAMOS LA LISTA DE PAISES#####
     country = forms.CharField(
-        label = _("Pais"),
+        label = _("Country"),
         required=False)
     #####################################
 
     suscribed = forms.BooleanField(
-        label = _("Suscrito"),
+        label = _("Suscribed"),
         required = False)
     confirmation_key = forms.CharField(
         max_length = 40,

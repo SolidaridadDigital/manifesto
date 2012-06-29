@@ -2,8 +2,8 @@
       font-family: "Museo700";
       src: url("http://www.webcontact.de/fonts/Museo700.eot");
       src: local("Museo 700"), local("Museo-700"), 
-          url("http://www.webcontact.de/fonts/Museo700.woff") format("woff"), 
-          url("http://www.webcontact.de/fonts/Museo700.otf") format("opentype"), 
+          url("Museo700.woff") format("woff"), 
+          url("Museo700.otf") format("opentype"), 
           url("http://www.webcontact.de/fonts/Museo700.svg#Museo-700") format("svg");
 }
 
@@ -442,4 +442,9 @@ section {
 /* signers */
 .signer-list img {
 	margin-right:10px;
+}
+
+#logo{
+	font-family: 'Museo700';
+	font-size:21px;
 }

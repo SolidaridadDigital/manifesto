@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-08 12:43-0400\n"
+"POT-Creation-Date: 2012-06-29 12:16-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,78 +18,163 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
-#: templates/index.html:6
+#: templates/index.html:47 templates/index.html.py:165
+#: templates/signers.html:9 templates/signers.html.py:110
 msgid "Digital Solidarity Manifesto"
 msgstr "Manifiesto de Solidaridad Digital"
 
-#: templates/index.html:26
+#: templates/index.html:67 templates/index.html.py:189
+#: templates/signers.html:29 templates/signers.html.py:134
 msgid "Digital<span>Solidarity</span>Manifesto"
 msgstr "Manifiesto<span>Solidaridad</span>Digital"
 
-#: templates/index.html:27
+#: templates/index.html:68 templates/signers.html:30
+#: templates/signers.html.py:177
 msgid "Going beyond "
 msgstr "Ir más allá"
 
-#: templates/index.html:30
+#: templates/index.html:71 templates/index.html.py:198
+#: templates/index.html:389 templates/signers.html:33
 msgid "Experiences"
 msgstr "Experiencias"
 
-#: templates/index.html:40
-#, fuzzy
+#: templates/index.html:81
 msgid "Agile Manifesto"
 msgstr "Manifiesto Ágil"
 
-#: templates/index.html:41
+#: templates/index.html:82 templates/index.html.py:237
+#: templates/signers.html:182
 msgid ""
 "As digital professionals we commit to put our knowledge, skills and "
 "experience to the service of mankind. Through this work we want to invite to:"
 msgstr ""
-"Como profesionales digitales nos comprometemos a poner nuestro conocimiento, habilidades y "
-"experiencia al servicio de la humanidad. A través de este trabajo queremos invitar:"
+"Como profesionales digitales nos comprometemos a poner nuestro conocimiento, "
+"habilidades y experiencia al servicio de la humanidad. A través de este "
+"trabajo queremos invitar:"
 
-#: templates/index.html:42
+#: templates/index.html:83 templates/index.html.py:240
+#: templates/signers.html:185
 msgid "Go beyond well-crafted software"
 msgstr "Ir más allá del Software bien hecho"
 
-#: templates/index.html:43
+#: templates/index.html:84 templates/index.html.py:240
+#: templates/signers.html:185
 msgid "towards <strong>software that really matters</strong>"
 msgstr "Hacia <strong>software que realmente importe</strong>"
 
-#: templates/index.html:44
+#: templates/index.html:85 templates/index.html.py:241
+#: templates/signers.html:186
 msgid "Go beyond steadily adding value"
 msgstr "Ir más allá de constantemente agregar valor"
 
-#: templates/index.html:45
+#: templates/index.html:86 templates/index.html.py:241
+#: templates/signers.html:186
 msgid "towards <strong>constantly making this world a better place</strong>"
 msgstr "hacia <strong>constantemente hacer del mundo un lugar mejor</strong>"
 
-#: templates/index.html:46
+#: templates/index.html:87 templates/index.html.py:242
+#: templates/signers.html:187
 msgid "Go beyond a community of professionals"
 msgstr "Ir más allá de una comunidad de profesionales"
 
-#: templates/index.html:47
+#: templates/index.html:88 templates/index.html.py:243
+#: templates/signers.html:188
 msgid "towards <strong>a global culture of digital solidarity</strong>"
 msgstr "hacia <strong>una cultura global de solidaridad digital</strong>"
 
-#: templates/index.html:48
+#: templates/index.html:89 templates/index.html.py:244
+#: templates/signers.html:189
 msgid "Go beyond productive partnerships"
 msgstr "Ir más allá de sociedades productivas"
 
-#: templates/index.html:49
+#: templates/index.html:90 templates/index.html.py:245
+#: templates/signers.html:190
 msgid "towards <strong>a fraternity that takes care of the needy</strong>"
 msgstr ""
 "hacia <strong>una fraternidad que se preocupa de los necesitados</strong>"
 
-#: templates/index.html:50
+#: templates/index.html:91 templates/index.html.py:248
+#: templates/signers.html:193
 msgid ""
 "That is, if the items on the left are necessary for developing useful "
 "software and creating business value, we consider that the goals on the "
 "right also deserve our skills, energy and passion."
 msgstr ""
-"Es decir, si bien los puntos a la izquierda son necesarios para el desarrollo de software útil "
-"y la creación de valor de negocio, nosotros consideramos que los objetivos a la "
-"derecha también merecen nuestras habilidades, energía y pasión."
+"Es decir, si bien los puntos a la izquierda son necesarios para el "
+"desarrollo de software útil y la creación de valor de negocio, nosotros "
+"consideramos que los objetivos a la derecha también merecen nuestras "
+"habilidades, energía y pasión."
 
-#: templates/index.html:53
+#: templates/index.html:102 templates/signers.html:56
 msgid "Latest Signers"
 msgstr "Últimos Firmantes"
+
+#: templates/index.html:130 templates/index.html.py:216
+#: templates/signers.html:84 templates/signers.html.py:161
+msgid "change"
+msgstr "cambio"
+
+#: templates/index.html:194 templates/index.html.py:236
+msgid "Manifesto"
+msgstr "Manifiesto"
+
+#: templates/index.html:196 templates/index.html.py:325
+msgid "Signers"
+msgstr "Firmantes"
+
+#: templates/index.html:200 templates/index.html.py:463
+msgid "About"
+msgstr "Acerca de"
+
+#: templates/index.html:232
+msgid "Going beyond Software Craftmanship"
+msgstr "Ir más allá de la Artesania del Software"
+
+#: templates/index.html:252
+msgid "Subscribe"
+msgstr "Suscribase"
+
+#: templates/index.html:262
+msgid "Name:"
+msgstr "Nombre:"
+
+#: templates/index.html:266
+msgid "Last Name:"
+msgstr "Apellido:"
+
+#: templates/index.html:270
+msgid "E-mail:"
+msgstr "Correo:"
+
+#: templates/index.html:274
+msgid "Password:"
+msgstr "Contraseña:"
+
+#: templates/index.html:278
+msgid "Password (again):"
+msgstr "Contraseña (de nuevo):"
+
+#: templates/index.html:282
+msgid "Comment:"
+msgstr "Comentario:"
+
+#: templates/index.html:286
+msgid "Country:"
+msgstr "País:"
+
+#: templates/index.html:290
+msgid "Suscribed:"
+msgstr "Suscrito:"
+
+#: templates/index.html:297
+msgid "Sign"
+msgstr "Firmar"
+
+#: templates/index.html:397 templates/index.html.py:408
+#: templates/index.html:419 templates/index.html.py:430
+#: templates/index.html:441 templates/index.html.py:452
+msgid "Read more"
+msgstr "Leer más"
+
+#~ msgid "Support"
+#~ msgstr "Soporte"
