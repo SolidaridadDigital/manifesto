@@ -448,3 +448,15 @@ section {
 	font-family: 'Museo700';
 	font-size:21px;
 }
+
+.signer-list li{
+	width:290px;
+	display: inline-block;
+	max-width:290px;
+}
+
+.signer-list span{
+	min-width:80px;
+	max-width:115px;
+	display: inline-block;
+}
