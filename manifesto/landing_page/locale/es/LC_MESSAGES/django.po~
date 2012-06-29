@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-29 12:04-0400\n"
+"POT-Creation-Date: 2012-06-29 12:16-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -131,8 +131,9 @@ msgid "Going beyond Software Craftmanship"
 msgstr "Ir más allá de la Artesania del Software"
 
 #: templates/index.html:252
-msgid "Support"
-msgstr "Soporte"
+#, fuzzy
+msgid "Subscribe"
+msgstr "Suscribase"
 
 #: templates/index.html:262
 msgid "Name:"
@@ -164,10 +165,17 @@ msgstr "País:"
 
 #: templates/index.html:290
 msgid "Suscribed:"
-msgstr ""
+msgstr "Suscrito:"
+
+#: templates/index.html:297
+msgid "Sign"
+msgstr "Firmar"
 
 #: templates/index.html:397 templates/index.html.py:408
 #: templates/index.html:419 templates/index.html.py:430
 #: templates/index.html:441 templates/index.html.py:452
 msgid "Read more"
 msgstr "Leer más"
+
+#~ msgid "Support"
+#~ msgstr "Soporte"

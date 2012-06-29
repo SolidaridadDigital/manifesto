@@ -248,7 +248,7 @@
                 </p>
             </div>    
               <div class='form-box'>
-                <h3 class='light-blue'>{% trans "Support" %}</h3>
+                <h3 class='light-blue'>{% trans "Suscribe" %}</h3>
                 <br>
                 <form action="/accounts/signup/" id="registerForm" method="post">
                     {% csrf_token %}
@@ -286,14 +286,14 @@
                         <td><input type="text" name="country" id="id_country" /></td>
                       </tr>
                       <tr>
-                        <th><label for="id_suscribed">{% trans "Suscrito:" %}</label></th>
+                        <th><label for="id_suscribed">{% trans "Suscribed:" %}</label></th>
                         <td>
                           <input type="checkbox" name="suscribed" id="id_suscribed" />
                           <input type="hidden" name="confirmation_key" id="id_confirmation_key" />
                         </td>
                       </tr>   
                       <tr>
-                        <th><input type="submit" class="submit" value="Firmar"></th>
+                        <th><input type="submit" class="submit" value="{% trans 'Sign' %}"></th>
                       </tr>
                     </table>
                   </form>
