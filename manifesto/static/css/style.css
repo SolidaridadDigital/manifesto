@@ -456,6 +456,7 @@ section {
 }
 
 .signer-list span{
-	max-width:70px;
+	min-width:80px;
+	max-width:115px;
 	display: inline-block;
 }
