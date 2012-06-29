@@ -248,6 +248,7 @@
                 </p>
             </div>    
               <div class='form-box'>
+                {% block content %}
                 <h3 class='light-blue'>{% trans "Subscribe" %}</h3>
                 <br>
                 <form action="/accounts/signup/" id="registerForm" method="post">
@@ -271,7 +272,7 @@
                       </tr>
                       <tr>
                         <th><label for="id_password1">{% trans "Password:" %}</label></th>
-                        <td><input id="id_password" type="password" class="required password" minlength="2" name="password1" id="password1" /></td>
+                        <td><input type="password" class="required password" minlength="2" name="password1" id="password1" /></td>
                       </tr>
                       <tr>
                         <th><label for="id_password2">{% trans "Password (again):" %}</label></th>
@@ -307,7 +308,7 @@
                   </ul>
                 </form>
                 -->
-
+                {% endblock %}
               </div>
               
             </div>
