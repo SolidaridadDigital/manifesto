@@ -9,7 +9,7 @@ from django.http import HttpResponse
 import csv
 
 def index(request):
-    with open('../utilidades/iso3166.csv', 'rb') as file_countries:
+    with open('/home/chileagil/manifesto/app/utilidades/iso3166.csv', 'rb') as file_countries:
         countries = [(row['Code'], row['English']) for row in csv.DictReader(file_countries)]
     countries2 = []    
     for country in countries:
