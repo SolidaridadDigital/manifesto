@@ -5,7 +5,7 @@ from django.contrib.sites.models import Site
 name_develop = 'Solidaridad Digital Desarrollo'
 domain_develop = 'localhost:8000'
 name_production = 'Solidaridad Digital'
-domain_production = 'www.digitalsolidarity.org'
+domain_production = 'solidaridad.lix.cl'
 
 
 try: # si existe un sitio con id=1 en la base de datos se modifica con los datos de produccion
