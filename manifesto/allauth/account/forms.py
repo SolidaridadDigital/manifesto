@@ -219,11 +219,13 @@ class SignupForm(BaseSignupForm):
 
     file_countries = csv.reader(open('../utilidades/iso3166.csv'), delimiter=',')
 
-    with open('../utilidades/iso3166.csv', 'rb') as file_countries:
-        countries = [(row['Code'], row['English']) for row in csv.DictReader(file_countries)]
-
+    with open('/home/chileagil/manifesto/app/utilidades/iso3166.csv', 'rb') as file_countries:
+        countries = [(row['Code'], row['English']) for row in csv.DictReader(file_countries)] # se obtiene el codigo y el nombre del pais en ingles
+    countries2 = []
+    for country in countries:
+        countries2.append(country[1])
     # campo para seleccionar el pais en el formulario
-    country = forms.ChoiceField(choices = countries)
+    country = forms.ChoiceField(choices = countries2)
 
     # campo para elegir si se quiere recibir correos del sitio
     suscribed = forms.BooleanField(
