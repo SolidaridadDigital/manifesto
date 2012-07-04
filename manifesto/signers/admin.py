@@ -11,4 +11,6 @@ class SignerProfileInline(admin.StackedInline):
 class CamposExtras(UserAdmin):
     inlines = [SignerProfileInline]
  
+
+#admin modificado para que se puedan ver los campos de signer profile en el admin
 admin.site.register(User, CamposExtras)

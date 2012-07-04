@@ -132,10 +132,13 @@ class BaseSignupForm(_base_signup_form_class()):
         max_length = 30,
         widget = forms.TextInput()
     )
+    # campo para el email en el formulario de firmas
     email = forms.EmailField(widget=forms.TextInput())
+    # campo para el nombre en el formulario de firmas
     first_name = forms.CharField(
         label = _("Name"),
         max_length = 30)
+    # campo para el apellido en el formulario de firmas
     last_name = forms.CharField(
         label = _("Last Name"),
         max_length = 30)
@@ -174,6 +177,8 @@ class BaseSignupForm(_base_signup_form_class()):
                     (_("A user is registered with this e-mail address."))
         return value
     
+    # metodo para crear el usuario con los datos del formulario
+    # se agrega el emial, nombre y apellido
     def create_user(self, commit=True):
         user = User()
         if app_settings.USERNAME_REQUIRED:
@@ -196,14 +201,17 @@ class BaseSignupForm(_base_signup_form_class()):
 
 class SignupForm(BaseSignupForm):
     
+    # campo para el password en el formulario
     password1 = forms.CharField(
         label = _("Password"),
         widget = forms.PasswordInput(render_value=app_settings.PASSWORD_INPUT_RENDER_VALUE)
     )
+    # campo para verificar password en el formulario
     password2 = forms.CharField(
 	label = _("Password (again)"),
 	widget = forms.PasswordInput(render_value=app_settings.PASSWORD_INPUT_RENDER_VALUE)
     )
+    # campo para el comentario que puede agregar un usuario al firmar
     comment = forms.CharField(
         label = _("Comment"),
         widget = forms.Textarea,
@@ -214,11 +222,14 @@ class SignupForm(BaseSignupForm):
     with open('../utilidades/iso3166.csv', 'rb') as file_countries:
         countries = [(row['Code'], row['English']) for row in csv.DictReader(file_countries)]
 
+    # campo para seleccionar el pais en el formulario
     country = forms.ChoiceField(choices = countries)
 
+    # campo para elegir si se quiere recibir correos del sitio
     suscribed = forms.BooleanField(
         label = _("Suscribed"),
         required = False)
+    # campo oculto que genera una llave de confirmacion para el usuario
     confirmation_key = forms.CharField(
         max_length = 40,
         required = False,
@@ -253,6 +264,9 @@ class SignupForm(BaseSignupForm):
                 raise forms.ValidationError(_("You must type the same password each time."))
         return self.cleaned_data
     
+    # metodo que llama al otro metodo que crea el usuario y termina de agregar los datos
+    # aqui se agrega el password del usuario, se deja como no activo hasta que valide su cuenta
+    # y se agregan los campos de comentario, pais y suscrito al signer profile asociado al nuevo usuario
     def create_user(self, commit=True):
         user = super(SignupForm, self).create_user(commit=False)
         password = self.cleaned_data.get("password1")
