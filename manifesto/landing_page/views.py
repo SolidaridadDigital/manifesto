@@ -11,9 +11,8 @@ import csv
 
 def index(request):
     # se abre el archivo con los datos de los paises
-    with open('../utilidades/iso3166.csv', 'rb') as file_countries:
+        with open('/home/chileagil/manifesto/app/utilidades/iso3166.csv', 'rb') as file_countries:
         countries = [(row['Code'], row['English']) for row in csv.DictReader(file_countries)] # se obtiene el codigo y el nombre del pais en ingles
-    countries2 = []
     for country in countries:
         countries2.append(country[1]) # se agregan los nombres de los paises en la lista
     # se retorna un response para que renderize index.html y se agrega al contexto el formulario para firmar y la lista de paises
