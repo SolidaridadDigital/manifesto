@@ -1,9 +1,7 @@
 {% load staticfiles %}
 {% load i18n %}
 {% load humanize %} 
-{% load staticfiles %}
-{% load i18n %}
-{% load humanize %} 
+
 <html>
   <head>
     <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -155,11 +153,12 @@
                       </tr>
                       <tr>
                         <th><label for="id_country">{% trans "Country:" %}</label></th>
-                        <td> <select name="country" id="id_country" />
+                        <td><input type="text" id="id_country" name="country" /></td>
+                        <!--<td> <select name="country" id="id_country" />
                            {% for country in countries %}  
                              <option value="{{ country }}">{{ country }}</option>
                            {% endfor %}  
-                         </select></td>
+                         </select></td>-->
                       </tr>
                       <tr>
                         <th><label for="id_suscribed">{% trans "Suscribed:" %}</label></th>
@@ -189,7 +188,6 @@
           <div class='wrapper'>
             <h2 style='text-align:center' class='orange'> {% trans "Signers" %} </h2>
               <ul class='signer-list'>
-            {{users}}
             {% for user in users %}
               
               <!--

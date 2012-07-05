@@ -218,7 +218,9 @@ class SignupForm(BaseSignupForm):
         required = False)
 
     # campo para seleccionar el pais en el formulario
-    country = forms.CharField(required = True)
+    country = forms.CharField(
+        label = _("Country"),
+        required = False)
 
     # campo para elegir si se quiere recibir correos del sitio
     suscribed = forms.BooleanField(
