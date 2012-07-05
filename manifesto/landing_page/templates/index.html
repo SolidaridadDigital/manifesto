@@ -153,12 +153,13 @@
                       </tr>
                       <tr>
                         <th><label for="id_country">{% trans "Country:" %}</label></th>
-                        <td><input type="text" id="id_country" name="country" /></td>
-                        <!--<td> <select name="country" id="id_country" />
+                        <td>
+                          <select name="country" id="id_country" />
                            {% for country in countries %}  
                              <option value="{{ country }}">{{ country }}</option>
                            {% endfor %}  
-                         </select></td>-->
+                         </select>
+                       </td>
                       </tr>
                       <tr>
                         <th><label for="id_suscribed">{% trans "Suscribed:" %}</label></th>
