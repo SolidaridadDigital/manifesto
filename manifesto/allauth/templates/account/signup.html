@@ -6,6 +6,7 @@
 
 {% block content %}
     <h1>{% trans "Sign Up" %}</h1>
+    {{error}}
     
     {% if user.is_authenticated %}
 {% include "account/snippets/already_logged_in.html" %}
