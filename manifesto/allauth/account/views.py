@@ -60,16 +60,13 @@ def signup(request, **kwargs):
     template_name = kwargs.pop("template_name", "account/signup.html")
     redirect_field_name = kwargs.pop("redirect_field_name", "next")
     success_url = kwargs.pop("success_url", None)
-    error = ""
     
     if success_url is None:
         success_url = get_default_redirect(request, redirect_field_name)
     
     if request.method == "POST":
-        error = "es post"
         form = form_class(request.POST)
         if form.is_valid():
-            error = "es valido"
             user = form.save(request=request)
             return complete_signup(request, user, success_url)
     else:
@@ -78,8 +75,7 @@ def signup(request, **kwargs):
            "login_url": passthrough_login_redirect_url(request,
                                                        reverse("account_login")),
            "redirect_field_name": redirect_field_name,
-           "redirect_field_value": request.REQUEST.get(redirect_field_name),
-           "error": error }
+           "redirect_field_value": request.REQUEST.get(redirect_field_name)}
     return render_to_response(template_name, RequestContext(request, ctx))
 
 
