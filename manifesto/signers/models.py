@@ -1,6 +1,7 @@
 from django.db import models
 from django.db.models.signals import post_save
 from django.contrib.auth.models import User
+import hashlib
 
 class SignerProfile(models.Model):
     # usuario con el que se relaciona 1 a 1
@@ -11,6 +12,10 @@ class SignerProfile(models.Model):
     country = models.CharField(max_length=30)
     # boolean para saber si el firmante quiere recibir mails del sitio
     suscribed = models.BooleanField(default=False)
+
+    # metodo para obetener el md5 del mail
+    def mail_to_md5(self):
+        return hashlib.md5(self.user.email).hexdigest()
 
     # metodo que dice como se vera el signer en el admin
     def __unicode__(self):

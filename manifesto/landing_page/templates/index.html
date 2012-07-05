@@ -115,7 +115,8 @@
                 <p>
                   {% trans "That is, if the items on the left are necessary for developing useful software and creating business value, we consider that the goals on the right also deserve our skills, energy and passion." %}
                 </p>
-            </div>    
+            </div>   
+            {% block content_div %} 
               <div class='form-box'>
                 {% block content %}
                 <h3 class='light-blue'>{% trans "Subscribe" %}</h3>
@@ -175,6 +176,7 @@
                   </form>
                 {% endblock %}
               </div>
+              {% endblock %}
               
             </div>
           </section>
@@ -184,7 +186,6 @@
         <section id='signers'>
 
           
-
 
           <div class='wrapper'>
             <h2 style='text-align:center' class='orange'> {% trans "Signers" %} </h2>
@@ -202,7 +203,7 @@
               
 
                     
-                    <li><img title="{{ user.get_profile.comment }}" alt="{{ user.get_profile.comment }}" width='80px' height='80px' src="http://www.gravatar.com/avatar/{{ user.mail }}" />{{ user.get_full_name }}</li>
+                    <li><img title="{{ user.get_profile.comment }}" alt="{{ user.get_profile.comment }}" width='80px' height='80px' src="http://www.gravatar.com/avatar/{{ user.get_profile.mail_to_md5 }}" />{{ user.get_full_name }}</li>
 
                 
 
